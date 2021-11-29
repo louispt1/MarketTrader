@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from enum import Enum, auto
-from trader import Trader
 
 
 class BuySell(Enum):
@@ -10,8 +9,8 @@ class BuySell(Enum):
 
 @dataclass  # Use a dataclass to define the trade class, this automatically adds things like ability to print so we can see if its working
 class Order:
-    trader: Trader
-    buy: BuySell
+    trader: 'Trader'
+    side: BuySell
     quantity: float
     price: float
     identity: int
