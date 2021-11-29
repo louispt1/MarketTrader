@@ -14,14 +14,6 @@ AN IMPORTANT CONSIDERATION IS THAT IN THIS WORLD WE ARE HAPPY FOR PEOPLE TO HAVE
 QUANTITY ON A MARKET. THINK OF THIS AS HOW SHORT YOU ARE ON THE MARKET
 """
 
-class TraderOnMarket:
-    """Class that represents a trader on a market, this gives the trader the ability to actually make trades."""
-
-    def __init__(self, trader: Trader, market: Market):
-        self.trader = trader
-        self.market = market
-
-
 if __name__ == "__main__":
     # I want to create two traders and a market, and have them add some orders and make a trade
     trader_one = Trader("Milan")
