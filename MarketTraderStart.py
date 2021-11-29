@@ -20,9 +20,7 @@ class Market:
 
     def __init__(self, marketName: str):
         self.marketName = marketName
-        self.traders: typing.Set[
-            Trader
-        ] = set()  # We can use a set instead of a list for faster look-up
+        self.traders: typing.Set[Trader] = set()  # We can use a set instead of a list for faster look-up
         self.active_bids: typing.Dict[
             int : typing.List[Order]
         ] = dict()  # This maps a bid (request to buy) order's price (integer, in cents) to a list of orders at that price
@@ -80,12 +78,6 @@ if __name__ == "__main__":
 
     # I want to see if the traders have the correct portfolio
 
-    assert trader_one.portfolio.portfolio == {
-        "Bitcoin": 100
-    }  # One takes on a position of +100
-    assert trader_two.portfolio.portfolio == {
-        "Bitcoin": -100
-    }  # One takes on a position of -100
-    assert btc_market.active_bids == {
-        100: [trader_one_order]
-    }  # The market has one bid order at 100
+    assert trader_one.portfolio.portfolio == {"Bitcoin": 100}  # One takes on a position of +100
+    assert trader_two.portfolio.portfolio == {"Bitcoin": -100}  # One takes on a position of -100
+    assert btc_market.active_bids == {100: [trader_one_order]}  # The market has one bid order at 100
